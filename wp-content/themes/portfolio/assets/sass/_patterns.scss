@@ -1,0 +1,68 @@
+/* _patterns.scss
+ * Repeatable patterns
+ * ------------------------------------------------------------------ */
+
+/*---------------------------------------------------------
+	Media
+-------------------------------------------------------- */
+
+img {
+	display: block;
+	line-height: 0;
+	font-style: italic;
+	color: $primary;
+	height: auto;
+	max-width: 100%;
+	&.wp-smiley {
+		margin: 0 !important;
+	}
+	&.alignleft,
+	&.alignright,
+	&.aligncenter {
+		@include rem('margin-bottom', $base);
+	}
+}
+img,
+div {
+	&.alignleft {
+		@include rem('margin-right', $base);
+	}
+	&.alignright {
+		@include rem('margin-left', $base);
+	}
+}
+embed,
+object,
+video,
+iframe {
+	max-width: 100%;
+}
+dt.wp-caption-dt {
+	margin-bottom: 0;
+}
+dd.wp-caption-dd {
+	margin-left: 0;
+}
+body.attachment figcaption,
+.post-feature figcaption,
+dd.wp-caption-dd,
+.wp-caption-text {
+	color: $darkgray;
+	font-style: italic;
+	word-wrap: break-word;
+}
+div.wp-caption {
+	max-width: 100%;
+}
+.aligncenter .wp-caption-text {
+	text-align: center;
+}
+.alignright .wp-caption-text {
+	text-align: right;
+}
+.wp-caption.alignright img {
+	float: right;
+}
+.alignright .wp-caption-text {
+	clear: right;
+}

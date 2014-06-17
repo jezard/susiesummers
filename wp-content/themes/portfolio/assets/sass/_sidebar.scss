@@ -1,0 +1,105 @@
+/* _sidebar.scss
+ * Sidebar and widget styling
+ * ------------------------------------------------------------------ */
+
+/*---------------------------------------------------------
+	No Sidebar
+-------------------------------------------------------- */
+
+div.no-sidebar {
+	width: 100% !important;
+}
+
+/*---------------------------------------------------------
+	Sidebar & widgets
+-------------------------------------------------------- */
+
+aside[role="complementary"] {
+	@media screen and (min-width: 800px){
+		width: percentage(260/$width);
+		float: right;
+	}
+	ul {
+		margin-left: 0;
+		li {
+			line-height: 1.95;
+			list-style: none;
+		}
+	}
+	.widgettitle {
+		font-weight: bold;
+		clear: both;
+		line-height: 1.8;
+		word-wrap: break-word;
+		@include rem('font-size', $sans-font-small);
+		a.rsswidget img {
+			display: none;
+		}
+	}
+	.textwidget {
+		color: $darkgray;
+	}
+	.widget {
+		@include rem('margin-bottom', $base);
+	}
+	.widget_search {
+		input[type="text"] {
+			margin-right: 12px;
+		}
+	}
+	.widget_rss {
+		ul {
+			margin-left: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.rss-date {
+			font-style: italic;
+			&:before {
+				content: "\2013  ";
+			}
+		}
+		a.rsswidget,
+		cite {
+			font-weight: bold;
+		}
+		cite {
+			display: inline-block;
+			@include rem('margin-bottom', $base);
+			&:before {
+				content: "\2013  ";
+			}
+		}
+	}
+	.widget_tag_cloud {
+		display: inline-block;
+		a {
+			font: {
+				size: $sans-font-small !important;
+			}
+			border-bottom: none;
+			display: inline-block;
+			padding: .2em .4em;
+			margin: 0 .6em .6em 0;
+			border: $rule;
+			&:active {
+				border-color: darken($lightgray, 5);
+			}
+		}
+	}
+	.widget_nav_menu {
+		ul.sub-menu li {
+			margin-left: $indent;
+			list-style: circle inside;
+		}
+	}
+	#wp-calendar {
+		td{
+			font-weight: normal;
+		}
+		caption {
+			color: #fff;
+		}
+	}
+}

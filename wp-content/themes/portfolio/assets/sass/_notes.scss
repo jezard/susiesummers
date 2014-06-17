@@ -1,0 +1,43 @@
+/* _notes.scss
+ * Theme notes
+ * ------------------------------------------------------------------
+
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:              14;
+$line-height:          22;
+
+---------------------------------------------------------
+	Examples
+---------------------------------------------------------
+
+* Use a pixel value with a rem fallback for font-size, padding, margins, etc.
+	padding: 5px 0;
+	padding: 0.357rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.143rem; (16 / $rembase)
+	line-height: 1.56em; ($line-height / 16)
+
+---------------------------------------------------------
+	Vertical spacing
+---------------------------------------------------------
+
+Vertical spacing between most elements should use 11px, 22px or 44px
+to maintain vertical rhythm:
+
+.my-new-div {
+	margin: 22px 0;
+	margin: 1.57em 0; ( 22 / $rembase )
+}
+
+---------------------------------------------------------
+	Further reading
+---------------------------------------------------------
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+
+------------------------------------------------------------------ */

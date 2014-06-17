@@ -1,0 +1,119 @@
+== 1.3.19 ==
+* Fixed compatibility issue with TinyMCE 4
+
+== 1.3.18 ==
+* Updated FitVids.js to 1.1
+* Updated theme screenshot to larger size
+
+== 1.3.17 ==
+* Fixed links to The Theme Foundry website in footer
+* Fixed issue with navigation rendering below slider description
+
+== 1.3.16 ==
+* Enhanced: Active state styling on page menus now matches custom menus
+* Fixed: Active item in page menu now correctly displays with custom accent color
+* Fixed: Menu issue with portfolio items when option to hide them from the blog was set
+* Fixed: JS bug preventing the 'Add Media' button from working in the Press This bookmarklet
+* Fixed: Caption mis-alignment on right-aligned images
+* Fixed: Slight variation in header spacing between posts and pages
+* Fixed: Unpublished portfolio items appeared on a portfolio page in some cases
+* Updated: Theme license information
+
+== 1.3.15 ==
+* Fix typo that caused featured images to not show on the default page template
+
+== 1.3.14 ==
+* Remove "copyright" terms from WordPress.com
+
+== 1.3.13 ==
+* Added print styles
+* Removed reference to non-existent template
+* Moved comment form parameters to a filter
+* Removed list styling from "Blogs I Follow" widget for WordPress.com
+* Display title on portfolio items when excerpt is not available
+* When adding new portfolio items, prepend, instead of append item
+
+== 1.3.12 ==
+* Fixed issue where text was rendering bold in Internet Explorer 9
+
+== 1.3.11 ==
+* Fixed misaligned icon on portfolio page template
+* Replaced all assets with SVG files for Retina displays
+
+== 1.3.10 ==
+* Fixed issue with slider button not updating color
+* Fixed text rendering issue in featured slider
+
+== 1.3.9 ==
+* Fixed invalid featured slider button
+
+== 1.3.8 ==
+* Updated gallery to handle 3.5 reordering
+
+== 1.3.7 ==
+* Fixed IE8 display bug in menu
+* Removed font smoothing
+
+== 1.3.6 ==
+* Removed touch controls for galleries on iOS 6 to stop crashes
+* Fixed slider arrows for retina devices
+
+== 1.3.5 ==
+* Fixed bug with IE styles not coming through in certain server configurations
+
+== 1.3.4 ==
+* Included Sass assets with theme package
+* Hid tags and categories on portfolio items when not included on blog pages
+
+== 1.3.3 ==
+* Fixed bug where portfolio pages were not showing on Edit Post screen
+
+== 1.3.2 ==
+* Fixed issue with social icons on retina displays
+
+== 1.3.1 ==
+* Fixed IE8 navigation not lining up
+* Removed HTML content fallback for portfolio pages to prevent plugin conflicts
+
+== 1.3 ==
+* Optimized theme assets for Retina display
+* Updated Twitter icon
+* Fixed bug with fonts not loading on secure requests
+
+== 1.2.1 ==
+* Increased drop-down menu width
+* Now paginated posts will show pages on home page
+* Fixed display issues when portfolio items are varying heights
+
+== 1.2 ==
+* Fixed issue where private or pending portfolio pages would not show up
+* Added ability to toggle "link" attribute on galleries
+* Various stylistic updates, small bug fixes and typo corrections
+* Added ability to change "View project" text
+* Migrated to using ttf-common.php for common functions
+
+== 1.1.4 ==
+* Fixed incompatibility bug with PHP 5.4
+* Added filter to copyright text HTML and removed realtime preview
+
+== 1.1.3 ==
+* Fixed bug with view project link not inheriting primary color
+
+== 1.1.2 ==
+* Allowed HTML display in customizer preview of copyright
+
+== 1.1.1 ==
+* Fixed bug with customizer
+
+== 1.1 ==
+* Added support for WordPress 3.4 customizer
+* Various stylistic fixes
+* Fixed a bug with image loading JavaScript
+* Added a fallback to portfolio pages for when users switch themes
+
+== 1.0.1 ==
+* Fixed images not loading when fade effect enabled
+* Various styling fixes
+
+== 1.0 ==
+* Initial release

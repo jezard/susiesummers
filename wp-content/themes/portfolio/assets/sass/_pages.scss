@@ -1,0 +1,381 @@
+/* _pages.scss
+ * Pages and page templates
+ * ------------------------------------------------------------------ */
+
+/*---------------------------------------------------------
+	Sitemap
+-------------------------------------------------------- */
+
+.tmp-sitemap {
+	section ul {
+		margin-left: 0;
+		&.children {
+			@include rem('margin-bottom', -18px);
+		}
+		time {
+			color: $dark;
+		}
+		li {
+			border-bottom: 1px dashed $lightgray;
+			list-style: none;
+			padding: .6em 0 1em;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------
+	Attachment
+-------------------------------------------------------- */
+
+.tmp-attachment {
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+/*---------------------------------------------------------
+	Password protected
+-------------------------------------------------------- */
+
+article.post-password-required {
+	input[type="password"],
+	input[type="submit"] {
+		@include rem('margin-top', $base);
+	}
+}
+
+/*---------------------------------------------------------
+	Featured
+-------------------------------------------------------- */
+
+figure.page-feature {
+	figcaption {
+		font-style: italic;
+		color: $darkgray;
+	}
+}
+
+/*---------------------------------------------------------
+	Search
+-------------------------------------------------------- */
+
+body.search {
+	article {
+		border-bottom: $rule;
+		@include rem('padding-bottom', $base);
+		@include rem('margin-bottom', $base * 2);
+		&.format-aside {
+			border-bottom: none;
+		}
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+	}
+	.post footer,
+	.comment-num,
+	.sticky-text,
+	.post-meta {
+		display: none;
+	}
+}
+
+/*---------------------------------------------------------
+	Homepage
+-------------------------------------------------------- */
+
+.page-template-homepage-php {
+	section.main-content {
+		margin-bottom: 0;
+		border-bottom: $rule;
+	}
+	.content {
+		@include rem('margin-top', 36px);
+		margin-bottom: 0;
+	}
+	section.recent-portfolio-items {
+		@include clear;
+		@include rem('padding-top', $base);
+		.portfolio-thumb {
+			@media screen and (min-width: 1000px){
+				margin-bottom: 0;
+			}
+		}
+	}
+	.featured-placeholder {
+		height: 200px;
+		width: 90%;
+		text-align: center;
+		padding: 100px 5% 0;
+		background-color: $bg-transparent-dark;
+		display: block;
+		color: $dark;
+	}
+	#featured {
+		span.slide-more {
+			position: absolute;
+			z-index: 1;
+			bottom: $base;
+			left: 4%;
+			font-family: $sans;
+		}
+		ul {
+			margin-bottom: 0;
+		}
+	}
+	.slide-title {
+		@media screen and (min-width: 800px){
+			@include rem('font-size', 17px);
+			max-width: 45%;
+		}
+		font-weight: bold;
+		position: absolute;
+		z-index: 1;
+		bottom: 22px;
+		left: 4%;
+		color: #fff;
+		padding: .5em;
+		background: $dark;
+		max-width: 50%;
+		line-height: 1.1;
+		margin-bottom: 36px;
+		@include transition(font-size .1s);
+		@include rem('font-size', 15px);
+	}
+}
+
+/*---------------------------------------------------------
+	Portfolio
+-------------------------------------------------------- */
+
+.grid {
+	@media screen and (min-width: 600px) and (max-width: 1000px){
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		max-width: 530px;
+	}
+}
+.tmp-portfolio,
+.page-template-homepage-php {
+		@media screen and (max-width: 1000px){
+			div.first-when-two-per-row {
+				clear: left;
+			}
+		}
+		.portfolio-placeholder {
+			height: 95px;
+			width: 202px;
+			display: block;
+			@include rem('padding', 20px);
+			@include rem('margin-bottom', 18px);
+			background: $bg-transparent-dark;
+		}
+		div.portfolio-thumb {
+			@media screen and (min-width: 600px){
+				float: left;
+				margin-right: percentage(32/$width);
+			}
+			@media screen and (min-width: 1000px){
+				margin-right: percentage(36/$width);
+				&.first-when-three-per-row {
+					clear: left;
+				}
+			}
+			width: 242px;
+			word-wrap: break-word;
+			@media screen and (min-width: 600px){
+				padding: percentage(9/$width);
+			}
+			padding: percentage(18/$width);
+			text-align: center;
+			margin: {
+				bottom: $base;
+				left: auto;
+				right: auto;
+			}
+			border: 1px solid #fff;
+			color: $darkgray;
+			@include clear;
+			&:hover {
+				border: $rule;
+				color: $dark;
+				.thumbnail-image {
+					background: rgba(0, 0, 0, .4);
+				}
+				.thumb-icon {
+					opacity: 1;
+				}
+				.view-port-item {
+					visibility: visible;
+				}
+			}
+			&:active {
+				border-color: darken($lightgray, 5);
+			}
+			img {
+				@include rem('margin-bottom', 12px);
+			}
+		}
+		.view-port-item {
+			color: #7c7c7c;
+			&:before {
+				color: $primary;
+				content: "+";
+				padding: .1em .3em;
+				position: relative;
+				top: -.1em;
+				margin-right: .5em;
+				border: $rule;
+				font-family: $symbol;
+				@include border-radius(40px);
+			}
+		}
+		.thumbnail-image {
+			background:  rgba(0, 0, 0, 0);
+			width: 100%;
+			height: 135px;
+			position: relative;
+			top: 135px;
+			margin-top: -135px;
+			@include transition(background .2s ease-in-out);
+		}
+		.thumb-icon {
+			font-family: $symbol;
+			font-size: 60px;
+			color: #fff;
+			position: relative;
+			top: 22px;
+			opacity: 0;
+			@include transition(opacity .2s ease-in-out);
+		}
+		div.last-when-three-per-row {
+			@media screen and (min-width: 1000px){
+				margin-right: 0;
+			}
+		}
+		div.last-when-two-per-row {
+			@media screen and (min-width: 600px) and (max-width: 1000px){
+				margin-right: 0;
+			}
+		}
+		section.portfolio-content {
+			clear: both;
+			width: 100%;
+			@include clear;
+			@include rem('padding-top', 18px);
+		}
+		.thumb-meta {
+			text-align: left;
+			p {
+				@include rem('margin-bottom', 12px);
+			}
+		}
+		.thumb-title {
+			color: $dark;
+			text-align: left;
+			@include rem('margin-bottom', 4px);
+		}
+		.thumb-date {
+			color: #8e8e8e;
+			margin-bottom: 0;
+			&:before {
+				content: "";
+				background: url(images/cal.svg) no-repeat;
+				float: left;
+				width: 8px;
+				height: 10px;
+				display: block;
+				position: relative;
+				padding-right: .4em;
+				top: 6px;
+			}
+		}
+}
+.tmp-portfolio .view-port-item {
+	float: right;
+	visibility: hidden;
+}
+body.page-template-portfolio-php {
+	.content,
+	.main-content {
+		margin-bottom: 0;
+	}
+}
+
+/*---------------------------------------------------------
+	Portfolio item
+-------------------------------------------------------- */
+
+.colophon {
+	section {
+		color: $darkgray;
+		blockquote {
+			margin: 0 0 $base 0;
+			padding: $base 0;
+			border-top: $rule;
+			border-bottom: $rule;
+			p {
+				margin-bottom: 0;
+				@include rem('font-size', 15px);
+			}
+			cite {
+				display: block;
+				clear: both;
+				color: $dark;
+				font: {
+					weight: bold;
+					family: $sans;
+					style: normal;
+				}
+				@include rem('margin-top', 12px);
+				&:before {
+					content: "";
+				}
+			}
+		&:before {
+			content: "";
+		}
+		}
+	}
+	.portfolio-meta {
+		p {
+			margin-bottom: 0;
+		}
+		color: $darkgray;
+		@include rem('margin-bottom', $base);
+	}
+}
+button.view-link {
+	font-weight: normal;
+	padding: .6em .6em;
+	@include rem('font-size', 12px);
+	&:after {
+		content: "  o";
+		font-family: $symbol;
+		@include rem('font-size', 14px);
+	}
+}
+a.view-item-link {
+	background: $primary;
+	color: #fff;
+	padding: .6em;
+	&:after {
+		content: "  o";
+		font-family: $symbol;
+		@include rem('font-size', 14px);
+	}
+}
+
+/*---------------------------------------------------------
+	Hides the "backup" images should they ever get printed
+-------------------------------------------------------- */
+
+.portfolio-gallery-hidden {
+	display: none;
+}

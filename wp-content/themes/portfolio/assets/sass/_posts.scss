@@ -1,0 +1,208 @@
+/* _posts.scss
+ * Post styling
+ * ------------------------------------------------------------------ */
+
+article.post,
+body.page .main-content {
+	@include rem('margin-bottom', $base * 2);
+	footer {
+		border-top: $rule;
+		font-family: $sans;
+		color: $darkgray;
+		@include rem('padding-top', $base);
+		@include rem('font-size', $sans-font-small);
+	}
+	span.comment-num {
+		float: right;
+		@include rem('margin-bottom', $base);
+	}
+}
+body.single article.post {
+	footer {
+		@include rem('margin-top', $base);
+	}
+}
+
+/*---------------------------------------------------------
+	Header
+-------------------------------------------------------- */
+
+header {
+	.title {
+		@media screen and (min-width: 800px){
+			max-width: 75%;
+			text-align: left;
+			clear: none;
+		}
+		text-align: center;
+		clear: both;
+		@include rem('font-size', 22px);
+	}
+	.post-meta {
+		@media screen and (min-width: 800px){
+			text-align: left;
+		}
+		text-align: center;
+		color: $darkgray;
+		a {
+			color: $darkgray;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+body.blog,
+body.archive,
+body.single {
+	header {
+		.title {
+			@include rem('margin-bottom', 12px);
+		}
+		.has-post-meta {
+			margin-bottom: 0; //reset
+		}
+	}
+}
+
+/*---------------------------------------------------------
+	Sticky
+-------------------------------------------------------- */
+
+.sticky-text {
+	display: inline-block;
+	background: $primary;
+	padding: .1em .4em;
+	color: #fff;
+	position: relative;
+	top: -1px;
+	font-weight: bold;
+	text-align: center;
+	@include rem('font-size', $sans-font-small);
+}
+
+/*---------------------------------------------------------
+	Body
+-------------------------------------------------------- */
+
+body.single article.post,
+body.page .main-content {
+	@media screen and (min-width: 800px){
+		@include rem('margin-bottom', $base * 2);
+	}
+	@include rem('margin-bottom', $base * 2);
+}
+
+/*---------------------------------------------------------
+	Footer
+-------------------------------------------------------- */
+
+nav.post-footer {
+	clear: both;
+}
+
+/*---------------------------------------------------------
+	Aside
+-------------------------------------------------------- */
+
+article.format-aside {
+	padding: 2em;
+	background-color: $bg-transparent-dark;
+	@include clear;
+	.post-date {
+		float: right;
+		color: $darkgray;
+		clear: both;
+		&:before {
+			content: "o  ";
+			font-family: $symbol;
+		}
+	}
+}
+
+/*---------------------------------------------------------
+	Links
+-------------------------------------------------------- */
+
+a[rel="next"] + a[rel="prev"] {
+	&:before {
+		content: "\005C  ";
+		margin-right: .2em;
+		color: $darkgray;
+	}
+}
+.blog {
+a[rel="next"] + a[rel="prev"] {
+	&:before {
+		margin-left: -.35em;
+	}
+}
+}
+a[rel="prev"],
+a[rel="next"],
+.attach-nav .prev a,
+.attach-nav .next a,
+.next-comment-link a,
+.prev-comment-link a {
+	color: $darkgray;
+}
+a[rel="next"],
+.attach-nav .prev a,
+.next-comment-link a {
+	&:before {
+		content: "\2190";
+	}
+	&:after {
+		content: " \005C";
+		margin-left: .2em;
+		color: $darkgray;
+	}
+}
+a[rel="prev"],
+.attach-nav .next a,
+.prev-comment-link a {
+	&:after {
+		content: "\2192";
+	}
+}
+.post-edit-link,
+a#cancel-comment-reply-link,
+.comment-edit-link,
+.comment-reply-link,
+.comment-num,
+.page-links {
+	display: inline-block;
+	padding: .2em .4em;
+	clear: both;
+	border: $rule;
+	&:active {
+		border-color: darken($lightgray, 5);
+	}
+}
+.post-edit-link {
+	@include rem('margin-top', 12px);
+}
+.comment-num a:before {
+	content: "b  ";
+	font-family: $symbol;
+}
+.comments-previous {
+	@include rem('margin-bottom', 12px);
+}
+.page-links {
+	@include rem('margin-bottom', $base);
+}
+.cat-links,
+.tag-links {
+	clear: both;
+	float: left;
+	line-height: $base;
+}
+.cat-links:before {
+	content: "Z  ";
+	font-family: $symbol;
+}
+.tag-links:before {
+	content: "J  ";
+	font-family: $symbol;
+}

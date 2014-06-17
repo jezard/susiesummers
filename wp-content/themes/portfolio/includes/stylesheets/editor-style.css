@@ -1,0 +1,82 @@
+body {
+	line-height: 25px;
+	font-family: "Gudea", "Helvetica Neue", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+tt,
+kbd,
+pre,
+code,
+samp {
+	font-family: Monaco, "Courier New", Courier, monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+h2,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h5 {
+	font-style: italic;
+}
+ul {
+	list-style: disc outside;
+}
+ol {
+	list-style: decimal outside;
+}
+ins {
+	color: #f00;
+	text-decoration: none;
+	border-bottom: none;
+}
+dl dt {
+	font-weight: bold;
+}
+dd {
+	font-style: italic;
+}
+mark {
+	background-color: #ffc;
+}
+blockquote {
+	font-style: italic;
+}
+div.alert {
+	background: #e4e4e4;
+	padding: .5em;
+}
+div.error {
+	background: #f04848;
+	padding: .5em;
+	color: #fff;
+}
+div.success {
+	background: #6abb58;
+	padding: .5em;
+	color: #fff;
+}
+div.note {
+	background: #ffc;
+	padding: .5em;
+}
+span.statement {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+div.pullquote {
+	font-weight: bold;
+	font-size: 1.2em;
+	padding: 1em 0;
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+}
+span.title-underline {
+	font-weight: bold;
+	text-decoration: underline;
+}
+span.type-intro {
+	font-size: 1.2em;
+}

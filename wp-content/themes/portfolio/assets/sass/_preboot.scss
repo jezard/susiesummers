@@ -1,0 +1,103 @@
+// _preboot.scss
+// Variables and mixins
+
+// Variables
+
+//Colors
+$primary: #eb171c;
+$dark: #1c1c1c;
+$darkgray: #505050;
+$lightgray: #e5e5e5;
+
+//Fonts
+$serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$sans: Gudea, Helvetica, "Helvetica Neue", Arial, Verdana, Tahoma, sans-serif;
+$mono: Monaco, "Courier New", Courier, monospace;
+$symbol: ModernPictogramsNormal;
+
+//Elements
+$rule: 1px solid $lightgray;
+$indent: 1.5em;
+
+//Transparent
+$bg-transparent-light: rgba(255, 255, 255, .8);
+$bg-transparent-dark: rgba(0, 0, 0, .04);
+
+//Background
+$bg-dark: #fefefe;
+
+//Grid
+$width-max: 860px;
+$width: 860;
+
+//Baseline
+$base: 26px;
+$serif-font-small: 14px;
+$sans-font-small: 14px;
+$line: 1.6;
+
+// Mixins
+
+// Clearing floats
+@mixin clear {
+	zoom: 1;
+	&:before, &:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+.clear {
+	@include clear;
+}
+
+//Border radius
+@mixin border-radius($radius: 2px) {
+	-webkit-border-radius: $radius;
+		 -moz-border-radius: $radius;
+			  border-radius: $radius;
+}
+
+//Box shadows
+@mixin box-shadow($shadow: 0 1px 1px rgba(0, 0, 0, .08)) {
+	-webkit-box-shadow: $shadow;
+		 -moz-box-shadow: $shadow;
+			  box-shadow: $shadow;
+}
+
+//Transitions
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	   -moz-transition: $transition;
+	        transition: $transition;
+}
+
+//Text shadows
+@mixin text-shadow($shadow: rgba(255, 255, 255, .6)) {
+	text-shadow: 0 1px 0 $shadow;
+}
+
+// Rem generator
+$baseline-px: 14px;
+
+@mixin rem($property, $px-values) {
+	// Convert the baseline into rems
+	$baseline-rem: $baseline-px / 1rem;
+	// Print the first line in pixel values
+	#{$property}: $px-values;
+	// If there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number" {
+		#{$property}: $px-values / $baseline-rem; }
+	@else {
+		// Create an empty list that we can dump values into
+		$rem-values: unquote("");
+		@each $value in $px-values {
+			// If the value is zero, return 0
+			@if $value == 0 {
+				$rem-values: append($rem-values, $value); }
+			@else {
+				$rem-values: append($rem-values, $value / $baseline-rem); } }
+		// Return the property and its list of converted values
+		#{$property}: $rem-values; } }

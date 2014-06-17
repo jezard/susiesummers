@@ -1,0 +1,26 @@
+/* _support.scss
+ * Browser support
+ * ------------------------------------------------------------------ */
+
+html.IE8 {
+	img {
+		width: auto;
+	}
+	span.thumb-icon {
+		visibility: hidden;
+	}
+	#wrapper {
+		width: 63.9534884%;
+	}
+	nav[role="navigation"] ul li {
+		float: left;
+	}
+	div.last-when-three-per-row {
+		margin-right:0;
+	}
+}
+html.IE7 {
+	nav[role="navigation"] ul li {
+		float: left;
+	}
+}

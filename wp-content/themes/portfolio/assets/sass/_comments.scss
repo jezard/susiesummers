@@ -1,0 +1,148 @@
+/* _comments.scss
+ * Comment styling
+ * ------------------------------------------------------------------ */
+
+#comments {
+	@include rem('margin-top', $base);
+	ol, ul {
+		margin: 0;
+	}
+	li {
+		&.comment {
+			list-style: none;
+			border-bottom: $rule;
+			@include clear;
+			@include rem('margin-bottom', $base);
+		}
+		&.bypostauthor {
+			border-bottom: none !important;
+		}
+	}
+}
+
+/*---------------------------------------------------------
+	Header
+-------------------------------------------------------- */
+
+header.comment-author {
+	clear: both;
+	time a {
+		color: $darkgray;
+		line-height: 54px;
+		&:before {
+			content: "\2013  ";
+		}
+	}
+	cite {
+		font-style: normal;
+		line-height: 54px;
+	}
+}
+
+/*---------------------------------------------------------
+	Body
+-------------------------------------------------------- */
+
+.post-content {
+	clear: both;
+ 	float: left;
+	ul,
+	ol,
+	dd {
+		margin-left: $indent !important;
+		margin-bottom: $base !important;
+	}
+	li {
+		border-bottom: none !important;
+	}
+	li > ul,
+	li > ol {
+		margin-bottom: 0 !important;
+	}
+}
+
+/*---------------------------------------------------------
+	Children
+-------------------------------------------------------- */
+
+ul.children {
+	@media screen and (min-width: 800px){
+		padding-left: 3em;
+	}
+	@include clear;
+}
+
+/*---------------------------------------------------------
+	Author
+-------------------------------------------------------- */
+
+li.bypostauthor article {
+	background: $bg-transparent-dark;
+	padding: $indent $indent 0;
+	@include clear;
+}
+
+/*---------------------------------------------------------
+	Details
+-------------------------------------------------------- */
+
+a#cancel-comment-reply-link {
+	position: relative;
+	left: .5em;
+}
+img.avatar {
+	display: inline-block;
+	float: left;
+	padding: .2em;
+	background: $bg-transparent-dark;
+	@include rem('margin-right', $base);
+}
+.comment-reply-link {
+	clear: both;
+	float: left;
+	@include rem('margin-bottom', $base);
+	&:before {
+    	content: "R  ";
+    	font-family: $symbol;
+		color: inherit;
+	}
+}
+
+/*---------------------------------------------------------
+	Form
+-------------------------------------------------------- */
+
+#reply-title {
+	clear: both;
+	@include rem('margin-top', $base);
+	&:before {
+		content: "b  ";
+		font-family: $symbol;
+	}
+}
+label.comment-field {
+	display: inline-block;
+	@include rem('margin', 0 0 $base);
+}
+#respond fieldset label.comment-field:after {
+	content: "\003A";
+}
+input.text-input,
+#comment {
+	width: 100%;
+}
+span.required {
+ 	color: $primary;
+}
+p {
+	&.guidelines {
+		@include rem('margin-bottom', 12px);
+	}
+	&.comments-rss a {
+		abbr {
+			border-bottom: none;
+			font-style: normal;
+			letter-spacing: 0;
+		}
+	}
+}

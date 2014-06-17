@@ -1,0 +1,50 @@
+/* _print.scss
+ * Print styles
+ * ------------------------------------------------------------------ */
+
+@media print {
+	* {
+		background-color: none;
+		color: #000000;
+		border: none;
+		font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+	html,
+	body {
+    	font-size: 12px;
+	}
+	#container,
+	aside[role="complementary"] {
+		float: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	hr,
+	#respond,
+	.comment-count,
+	.comment-reply-link,
+	nav a[rel="next"],
+	nav a[rel="prev"],
+	nav[role="navigation"],
+	.thumbnail-image,
+	.flex-control-nav,
+	.flex-direction-nav,
+	.thumb-icon,
+	.sticky-text {
+		display: none;
+	}
+	.flexslider img {
+		float: left;
+	}
+	img {
+		max-width: 500px;
+	}
+	#comments,
+	aside[role="complementary"] {
+		page-break-before: always;
+	}
+	div.portfolio-thumb {
+		float: left;
+	}
+}

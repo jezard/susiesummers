@@ -1,0 +1,618 @@
+/* _scaffolding.scss
+ * Basic structure
+ * ------------------------------------------------------------------ */
+
+html {
+	font-size: 87.5%;
+}
+
+/*---------------------------------------------------------
+	Body
+-------------------------------------------------------- */
+
+body {
+	background-color: #ededed;
+	text-rendering: optimizeLegibility;
+	color: $dark;
+	font-family: $sans;
+	line-height: $line;
+}
+#container {
+	@media screen and (min-width: 1042px){
+		margin: 0 auto;
+		padding: 4em 5em;
+	}
+	background-color: #fff;
+	max-width: $width-max;
+	margin: 0 auto;
+	padding: 2.5em;
+	@include clear;
+}
+#wrapper {
+	@media screen and (min-width: 800px){
+		width: 63.9534884%;
+		float: left;
+	}
+	@include clear;
+}
+.content {
+	@include rem('margin-bottom', $base);
+}
+
+/*---------------------------------------------------------
+	Selection
+-------------------------------------------------------- */
+
+::-moz-selection {
+	background: $lightgray;
+	color: $dark;
+	text-shadow: none;
+}
+::-webkit-selection {
+	background: $lightgray;
+	color: $dark;
+	text-shadow: none;
+}
+::selection {
+	background: $lightgray;
+	color: $dark;
+	text-shadow: none;
+}
+img::selection {
+	background: transparent;
+}
+img::-moz-selection {
+	background: transparent;
+}
+
+/*---------------------------------------------------------
+	Links
+-------------------------------------------------------- */
+
+a {
+	color: $primary;
+	text-decoration: none;
+	&:hover {
+		color: $darkgray;
+		@include transition(color .1s ease-in-out);
+	}
+}
+
+/*---------------------------------------------------------
+	Base
+-------------------------------------------------------- */
+
+ul,ol,dl,p,address,.vcard,.notice,.card,figure,pre,fieldset,table,dt,dd,hr {
+	@include rem('margin-bottom', $base);
+}
+p,ul,ol,dl,blockquote, .post-statement, .statement {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+ul,
+ol,
+dd {
+	margin-left: $indent;
+}
+pre,
+code,
+input,
+textarea {
+	font: inherit;
+}
+
+/*---------------------------------------------------------
+	Headings
+-------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+	word-wrap: break-word;
+	@include rem('margin-bottom', 12px);
+}
+h1 {
+	@include rem('font-size', 22px);
+}
+h2 {
+	font-weight: bold;
+	@include rem('font-size', 18px);
+	a {
+		color: $dark;
+		&:hover {
+			color: $dark;
+		}
+	}
+}
+h3 {
+	@include rem('font-size', 18px);
+}
+h4 {
+	font-weight: bold;
+	@include rem('font-size', 17px);
+}
+h5 {
+	color: $primary;
+	font: {
+		weight: bold;
+		style: italic;
+	}
+}
+h6 {
+	font-weight: bold;
+	color: $primary;
+	text-transform: uppercase;
+	@include rem('font-size', 12px);
+}
+
+/*---------------------------------------------------------
+	Elements
+-------------------------------------------------------- */
+
+blockquote {
+	@media screen and (min-width: 1042px){
+		margin-left: -2em;
+	}
+	color: $darkgray;
+	padding-left: 2em;
+	margin-top: -62px;
+	font-style: italic;
+	@include rem('font-size', 16px);
+	p {
+		font-family: $serif;
+	}
+	&:before {
+		content: "\201C";
+		position: relative;
+		top: 50px;
+		left: -40px;
+		@include rem('font-size', 40px);
+		font-family: $mono;
+	}
+	cite {
+		color: $primary;
+		@include rem('font-size', $sans-font-small);
+		&:before {
+			content: "\2014"
+		}
+	}
+}
+tt,
+kbd,
+pre,
+code,
+samp {
+	font: {
+		family: $mono;
+		weight: normal;
+	}
+	background: $bg-transparent-dark;
+	@include rem('font-size', 12px);
+	@include rem('padding', 1px 3px);
+}
+mark{
+	background: #ffc;
+	@include rem('padding', 2px 4px);
+}
+code {
+	background: $bg-transparent-dark;
+}
+ins {
+	color: #f00;
+	text-decoration: none;
+}
+small {
+	font-size: .75em;
+}
+pre {
+	display: block;
+	word-wrap: break-word;
+	overflow: auto;
+	white-space: pre-wrap;
+	@include rem('padding', $base);
+}
+hr {
+	border: 0;
+	height: 1px;
+	margin: $base auto;
+	background-color: $lightgray;
+}
+
+/*---------------------------------------------------------
+	Table
+-------------------------------------------------------- */
+
+table {
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	word-wrap: break-word;
+	word-break: break-all;
+	th,
+	td,
+	caption {
+		padding: 2%;
+		a:hover {
+			color: $dark;
+		}
+	}
+	caption {
+		background: $primary;
+	}
+	tbody tr:nth-child(even) td,
+	tbody tr.even td {
+		background: $bg-transparent-dark;
+	}
+	tfoot {
+		font-style: italic;
+	}
+	td[valign="top"] {
+		vertical-align: top;
+	}
+	td[valign="bottom"] {
+		vertical-align: bottom;
+	}
+}
+
+/*---------------------------------------------------------
+	Lists
+-------------------------------------------------------- */
+
+ul {
+	list-style: disc outside;
+}
+ol {
+	list-style: decimal outside;
+}
+#wrapper li {
+	margin: .4em 0;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+dl {
+	dt {
+		font-weight: bold;
+		@include rem('margin-bottom', 12px);
+	}
+	dd {
+		margin-left: 0;
+		color: $darkgray;
+	}
+}
+
+/*---------------------------------------------------------
+	Classes
+-------------------------------------------------------- */
+
+.clear {
+	clear: both;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.hide {
+	display: none;
+	visibility: hidden;
+}
+.hidden {
+	visibility: hidden;
+}
+.noborder {
+	border: none;
+}
+
+/*---------------------------------------------------------
+	Custom
+-------------------------------------------------------- */
+
+span.type-intro {
+	line-height: 1.5;
+	@include rem('font-size', 20px);
+}
+span.title-underline {
+	font-weight: bold;
+	border-bottom: 2px solid $primary;
+	@include rem('font-size', 16px);
+}
+div.pullquote {
+	border: {
+		top: $rule;
+		bottom: $rule;
+	}
+	font-weight: bold;
+	padding: $base 0;
+	@include rem('margin-bottom', $base);
+	@include rem('font-size', 20px);
+}
+span.statement {
+	font-weight: bold;
+	line-height: 1.5;
+	@media screen and (min-width: 800px){
+		@include rem('font-size', 22px);
+	}
+	@include rem('font-size', 20px);
+}
+
+/*---------------------------------------------------------
+	Alerts
+-------------------------------------------------------- */
+
+.alert {
+	padding: 1em;
+	background: $bg-transparent-dark;
+	clear: both;
+	@include rem('margin-bottom', $base);
+}
+.error {
+	background: #f04848;
+	color: #ffffff;
+}
+.success {
+	background: #6abb58;
+	color: #ffffff;
+}
+.note {
+	background: #ffc;
+	color: $dark;
+}
+
+/*---------------------------------------------------------
+	Galleries
+-------------------------------------------------------- */
+
+div.gallery {
+	dt.gallery-icon {
+		a img {
+			border: none !important;
+			margin-bottom: 0;
+		}
+		padding: 0 6%;
+		margin-top: 3%;
+	}
+	dd.gallery-caption {
+		margin-bottom: 0;
+	}
+	dl, dt {
+		margin-bottom: 0;
+	}
+}
+
+/*---------------------------------------------------------
+	header
+-------------------------------------------------------- */
+
+header[role="banner"] {
+	@include clear;
+	@include rem('margin-bottom', $base);
+	.branding {
+		@media screen and (min-width: 800px){
+			float: left;
+			width: 40%;
+			text-align: left;
+		}
+		margin: 0 auto;
+		text-align: center;
+		@include rem('margin-bottom', 12px);
+	}
+	h1 {
+		margin-bottom: 0;
+		font-weight: bold;
+	}
+	.tagline {
+		font-weight: normal;
+		margin-bottom: 0;
+		color: $darkgray;
+		@include rem('font-size', $sans-font-small);
+	}
+}
+
+/*---------------------------------------------------------
+	Menu
+-------------------------------------------------------- */
+
+nav[role="navigation"] {
+	@media screen and (min-width: 800px){
+		text-align: right;
+		float: right;
+		width: 60%;
+	}
+	text-align: center;
+	ul {
+		margin: 0;
+		text-indent: 0;
+	}
+	li a,
+	li {
+		display: inline-block;
+		color: $darkgray;
+		ul li {
+			padding-left: 0;
+		}
+		&:hover {
+			color: $dark;
+		}
+	}
+	li.current_page_item a,
+	li.current_page_parent a,
+	li.current-menu-item a,
+	li.current-menu-parent a {
+		color: $primary;
+		font-weight: bold;
+		border: $rule;
+	}
+	li {
+		margin: 0 2%;
+		position: relative;
+		a {
+			border-bottom: 0;
+			padding: .3em .5em;
+		}
+		&:hover ul {
+			display: block;
+		}
+		&:last-child {
+			margin-right: 0;
+			border-right: none;
+		}
+	}
+	li ul {
+		display: none;
+		position: absolute;
+		top: 25px;
+		padding: 0;
+		margin: 0;
+		z-index: 2;
+		text-align: center;
+		&:before {
+			content: "\25B2";
+			color: #f3f3f3;
+			position: relative;
+			left: -35px;
+			bottom: -6px;
+		}
+	}
+	ul.children {
+		&:before {
+			left: 10px;
+		}
+	}
+	li ul li,
+	li ul li a {
+		float: none;
+	}
+	li ul li a {
+		@include rem('padding', 11px 4px);
+		word-break: break-word;
+	}
+	ul.sub-menu li,
+	ul.children li {
+		a {
+			border: none;
+			font-weight: normal;
+			color: inherit;
+			display: block;
+		}
+		&.current_page_item,
+		&.current-menu-item,
+		&:hover {
+			color: $dark;
+			background-color: #f3f3f3;
+		}
+		background: #fff;
+		display: block;
+		border: 1px solid #f3f3f3;
+		border-top: none;
+		padding: {
+			left: 4px;
+			right: 4px;
+		}
+		width: 100px;
+		line-height: 1.7;
+		top: -4px;
+		&:first-child {
+			border-top: 1px solid #f3f3f3;
+		}
+		&:nth-child(1):last-child {
+			border-bottom: 1px solid #f3f3f3;
+		}
+	}
+}
+
+/*---------------------------------------------------------
+	Footer
+-------------------------------------------------------- */
+
+footer[role="contentinfo"] {
+	border-top: $rule;
+	padding: 2em 0 0;
+	margin: 2em 0 0;
+	float: left;
+	width: 100%;
+	clear: both;
+	a {
+		color: $dark;
+	}
+	div.copyright {
+		@media screen and (min-width: 800px) {
+			float: right;
+			width: 60%;
+			text-align: right;
+		}
+		text-align: center;
+		@include rem('font-size', 13px);
+		p {
+			text-align: center;
+			color: $darkgray;
+			margin: 0;
+			@include rem('font-size', 13px);
+			@media screen and (min-width: 800px) {
+				text-align: right;
+			}
+		}
+	}
+}
+
+/*---------------------------------------------------------
+	Social
+-------------------------------------------------------- */
+
+footer[role="contentinfo"] {
+	nav.social {
+		@media screen and (min-width: 800px){
+			float: left;
+			text-align: left;
+			width: 40%;
+			@include rem('margin-top', 4px);
+		}
+		text-align: center;
+		height: $base;
+		@include rem('margin-bottom', 12px);
+		ul {
+			margin-left: 0;
+			li {
+				list-style-type: none;
+				display: inline;
+				margin-left: .2em;
+				&:first-child {
+					margin-left: 0;
+				}
+				&.twitter a {
+					background-position: 0;
+				}
+				&.facebook a {
+					background-position: -17px;
+				}
+				&.google a {
+					background-position: -34px;
+				}
+				&.flickr a {
+					background-position: -51px;
+				}
+				&.rss a {
+					background-position: -68px;
+				}
+				a {
+					background: url(images/social-icons.svg) no-repeat;
+					display: inline-block;
+					opacity: .25;
+					height: 16px;
+					width: 16px;
+					@include transition(all .2s ease);
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
