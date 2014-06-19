@@ -25,7 +25,7 @@
 			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php endif; ?>
 		<?php if ( get_bloginfo( 'description' ) ) : ?>
-			<h4 class="tagline"><?php bloginfo( 'description' ); ?> </h4>
+			<!--<h4 class="tagline"><?php bloginfo( 'description' ); ?> </h4>-->
 		<?php endif; ?>
 		</div>
 		<nav role="navigation">

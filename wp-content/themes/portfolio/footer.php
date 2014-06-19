@@ -22,8 +22,8 @@
 							<a href="<?php echo esc_url( $flickr_url ); ?>" title="<?php esc_attr_e( 'Flickr', 'portfolio' ); ?>"></a>
 						</li>
 					<?php endif; ?>
-					<li class="rss">
-						<a href="<?php echo esc_url ( get_bloginfo( 'rss_url' ) ); ?>" title="<?php esc_attr_e( 'RSS', 'portfolio' ); ?>"></a>
+					<li>
+						<a data-pin-do="buttonFollow" href="http://www.pinterest.com/artiesusie/">Artie Susie</a>
 					</li>
 				</ul>
 			</nav>
@@ -41,10 +41,11 @@
 				?>
 				<p id="copyright-text"><?php echo $copy_text; ?></p>
 			<?php endif; ?>
-				<p class="credit-link"><a href="https://thethemefoundry.com/wordpress-themes/portfolio/">WordPress Portfolio theme</a> by <a href="https://thethemefoundry.com/">The Theme Foundry</a></p>
+				<p class="credit-link">Website by <a href="http://wizard.technology/">Wizard Technology</a></p>
 		</div>
 	</footer>
 </div><!--end container-->
 <?php wp_footer(); ?>
+<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 </body>
 </html>

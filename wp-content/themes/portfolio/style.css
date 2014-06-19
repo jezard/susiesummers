@@ -892,7 +892,7 @@ footer[role="contentinfo"] nav.social ul li.flickr a {
 footer[role="contentinfo"] nav.social ul li.rss a {
   background-position: -68px;
 }
-footer[role="contentinfo"] nav.social ul li a {
+/*footer[role="contentinfo"] nav.social ul li a {
   background: url(images/social-icons.svg) no-repeat;
   display: inline-block;
   opacity: .25;
@@ -901,7 +901,7 @@ footer[role="contentinfo"] nav.social ul li a {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
-}
+}*/
 footer[role="contentinfo"] nav.social ul li a:hover {
   opacity: 1;
 }
