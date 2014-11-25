@@ -2126,6 +2126,9 @@ span.slide-more {
   margin-top: 26px;
   margin-top: 1.85714rem;
 }
+.wpcf7 textarea {
+  width:  100%;
+}
 
 /* _symbols.scss
  * Modern Pictograms icon typeface (http://thedesignoffice.org/project/modern-pictograms/)
