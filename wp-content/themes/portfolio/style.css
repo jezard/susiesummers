@@ -809,6 +809,11 @@ nav[role="navigation"] ul.children li:nth-child(1):last-child {
   border-bottom: 1px solid #f3f3f3;
 }
 
+.menu li{
+  font-size: 16px;
+  font-weight: bold;
+}
+
 /*---------------------------------------------------------
 	Footer
 -------------------------------------------------------- */
